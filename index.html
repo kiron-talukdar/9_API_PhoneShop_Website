@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API DATA Mobile Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container{
+        max-width: 1400px;
+        width: 100%;
+        margin: auto;
+    }
+    </style>
+</head>
+<body class="container">
+    <!-- 1. input field to search products -->
+    <section class="m-14 flex items-center justify-center gap-2 ">
+        <input id="search-value" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs text-center" />        
+        <button onclick="handleSearch()" class="btn btn-primary">Search</button>
+    </section>
+
+      <!--4 loading spinner  -->
+      <div id="loading-spinner" class="text-center my-40 hidden">
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+
+    <!-- 2. showing product section -->
+    <section class=" ">
+        <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 place-items-center	">
+
+        </div>   
+    </section>
+
+    <!-- 3 show all button area -->
+     <div class="flex items-center justify-center mt-5">
+      <button id="show-all-button" class=" btn btn-primary hidden">Show All</button>
+     </div>
+
+     <!-- show_details-modal -->
+
+<!-- You can open the modal using ID.showModal() method -->
+<button class="btn" onclick="show_details_modal.showModal()">open modal</button>
+<dialog id="show_details_modal" class="modal">
+  <div class="modal-box ">
+
+    <div id="show-details-container" class="">
+
+    </div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+    <script src="js/script.js"></script>
+    <!-- <script src="js/loadApi_DataDirrerentWay.js"></script> -->
+</body>
+</html>
